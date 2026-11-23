@@ -138,7 +138,7 @@
                 <p class="text-lg text-green-700 font-bold">Propuesta Transmedia para la Infancia (4 a 8 años)</p>
             </div>
 
-            <!-- Tarjeta 1: ¿De dónde proviene la propuesta? -->
+            <!-- Tarjeta 1 -->
             <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-lg border-l-8 border-green-600">
                 <h3 class="text-2xl font-black text-green-900 mb-3 flex items-center gap-2">
                     <span>🌱</span> ¿De dónde proviene la propuesta?
@@ -151,7 +151,7 @@
                 </p>
             </div>
 
-            <!-- Tarjeta 2: La Narrativa y el Relato -->
+            <!-- Tarjeta 2 -->
             <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-lg border-l-8 border-amber-500">
                 <h3 class="text-2xl font-black text-amber-900 mb-3 flex items-center gap-2">
                     <span>🦉</span> La Narrativa: El Bosque de los Ecos Perdidos
@@ -164,7 +164,7 @@
                 </p>
             </div>
 
-            <!-- Tarjeta 3: ¿De qué se trata esta plataforma web? -->
+            <!-- Tarjeta 3 -->
             <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-lg border-l-8 border-blue-600">
                 <h3 class="text-2xl font-black text-blue-900 mb-3 flex items-center gap-2">
                     <span>🌐</span> ¿De qué se trata esta plataforma web?
@@ -173,7 +173,7 @@
                     Esta página web funciona como un <b>ecosistema transmedia expandido</b>, donde el conocimiento no se transmite por un solo canal, sino que fluye a través de múltiples experiencias interactivas:
                 </p>
                 <ul class="list-disc list-inside text-gray-700 text-lg space-y-2 ml-2">
-                    <li><b>Juego Interactivo (4 Niveles Adaptativos):</b> Misiones de limpieza ambiental, clasificación de hábitats, rescate sonoro y dilemas ecológicos guiados por la Abuela Lechuza.</li>
+                    <li><b>Juego Interactivo (5 Niveles Adaptativos):</b> Misiones de limpieza ambiental, clasificación de hábitats, rescate sonoro, dilemas ecológicos y el laberinto final guiados por la Abuela Lechuza.</li>
                     <li><b>Podcast Temático Pro:</b> Episodios sonoros profundos sobre la importancia del agua, los paisajes sonoros y el cuidado ambiental.</li>
                     <li><b>Videos Educativos con Portadas Propias:</b> Recursos audiovisuales con portadas interactivas para reflexionar sobre la naturaleza.</li>
                     <li><b>Mi Diario (Canvas Creativo):</b> Un espacio libre para que el niño dibuje y simbolice su aprendizaje.</li>
@@ -269,13 +269,33 @@
             <p id="cave-msg" class="text-xl sm:text-2xl font-bold mt-6 h-10"></p>
         </div>
 
-        <!-- Nivel 4: El Gran Árbol -->
+        <!-- Nivel 4: Dilema Ambiental -->
         <div id="screen-level-4" class="screen bg-green-50">
-            <h2 class="text-3xl sm:text-4xl font-black mb-4 text-green-900">El Corazón del Bosque 🌳</h2>
+            <h2 class="text-3xl sm:text-4xl font-black mb-4 text-green-900">La Decisión del Guardián 🌿</h2>
             <div class="text-7xl sm:text-8xl mb-4">🌱</div>
-            <p class="text-xl sm:text-2xl mb-6 font-bold text-green-700 max-w-lg text-center">¡Hemos limpiado y ordenado el hogar! Encontramos un último dilema ambiental. ¿Qué debemos hacer?</p>
+            <p class="text-xl sm:text-2xl mb-6 font-bold text-green-700 max-w-lg text-center">¡Hemos limpiado y ordenado el hogar! Encontramos un dilema ambiental antes de llegar al Gran Árbol. ¿Qué debemos hacer?</p>
             <div id="decision-container" class="flex flex-col gap-3 w-full items-center max-w-md"></div>
             <p id="decision-msg" class="text-xl sm:text-2xl font-bold mt-6 h-10"></p>
+        </div>
+
+        <!-- Nivel 5: El Laberinto del Bosque (NUEVO) -->
+        <div id="screen-level-5" class="screen bg-teal-50 overflow-y-auto">
+            <h2 class="text-2xl sm:text-3xl font-black mb-1 text-teal-900">El Laberinto del Manantial 💧</h2>
+            <p class="text-base sm:text-lg mb-3 font-bold text-teal-700">Guía a Guille (🦝) con la gota pura hasta el Gran Árbol (🌳).</p>
+            
+            <!-- Tablero del Laberinto -->
+            <div id="maze-board" class="grid gap-1 bg-emerald-900 p-2 sm:p-3 rounded-2xl shadow-xl border-4 border-emerald-700 mb-3"></div>
+            
+            <!-- Controles Táctiles / Direccionales -->
+            <div class="flex flex-col items-center gap-1 select-none">
+                <button onclick="movePlayer(-1, 0)" aria-label="Arriba" class="bg-teal-600 hover:bg-teal-500 active:scale-95 text-white font-black w-14 h-12 rounded-xl shadow-md text-2xl flex items-center justify-center">⬆️</button>
+                <div class="flex gap-2">
+                    <button onclick="movePlayer(0, -1)" aria-label="Izquierda" class="bg-teal-600 hover:bg-teal-500 active:scale-95 text-white font-black w-14 h-12 rounded-xl shadow-md text-2xl flex items-center justify-center">⬅️</button>
+                    <button onclick="movePlayer(1, 0)" aria-label="Abajo" class="bg-teal-600 hover:bg-teal-500 active:scale-95 text-white font-black w-14 h-12 rounded-xl shadow-md text-2xl flex items-center justify-center">⬇️</button>
+                    <button onclick="movePlayer(0, 1)" aria-label="Derecha" class="bg-teal-600 hover:bg-teal-500 active:scale-95 text-white font-black w-14 h-12 rounded-xl shadow-md text-2xl flex items-center justify-center">➡️</button>
+                </div>
+            </div>
+            <p id="maze-msg" class="text-lg sm:text-xl font-bold text-teal-800 h-7 mt-2"></p>
         </div>
 
         <!-- Pantalla de Victoria -->
@@ -285,7 +305,7 @@
             <div class="bg-white p-8 rounded-3xl shadow-xl flex flex-col items-center bounce">
                 <span class="text-6xl mb-4">💧</span>
                 <p class="text-2xl font-black text-blue-600">Guardián del Silencio Vivo</p>
-                <p class="text-md text-gray-500 mt-2">Nivel Completo</p>
+                <p class="text-md text-gray-500 mt-2">Todos los Niveles Completos</p>
             </div>
             <button onclick="resetGame()" class="mt-8 bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-6 rounded-full text-xl shadow-lg">
                 Jugar de nuevo
@@ -350,7 +370,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Video 1 (Portada Tuya 3: Agua 70%) -->
+                <!-- Video 1 -->
                 <div class="bg-white p-4 rounded-3xl shadow-xl border-4 border-yellow-200">
                     <h3 class="font-bold text-lg text-yellow-900 mb-2">💧 El Cuidado del Agua</h3>
                     <div class="video-container relative w-full overflow-hidden rounded-2xl bg-black cursor-pointer group" style="padding-top: 56.25%;" onclick="playVideo(this, 'fuo4tfzcGp4')">
@@ -363,7 +383,7 @@
                     </div>
                 </div>
 
-                <!-- Video 2 (Portada Tuya 2: Sonidos de la naturaleza) -->
+                <!-- Video 2 -->
                 <div class="bg-white p-4 rounded-3xl shadow-xl border-4 border-yellow-200">
                     <h3 class="font-bold text-lg text-yellow-900 mb-2">🎵 Discriminación de Sonidos</h3>
                     <div class="video-container relative w-full overflow-hidden rounded-2xl bg-black cursor-pointer group" style="padding-top: 56.25%;" onclick="playVideo(this, 'noQTk4mOmIQ')">
@@ -376,7 +396,7 @@
                     </div>
                 </div>
 
-                <!-- Video 3 (Portada Tuya 1: Cuidar el medio ambiente) -->
+                <!-- Video 3 -->
                 <div class="bg-white p-4 rounded-3xl shadow-xl border-4 border-yellow-200 md:col-span-2">
                     <h3 class="font-bold text-lg text-yellow-900 mb-2">🌱 ¿Cómo Cuidar la Naturaleza?</h3>
                     <div class="video-container relative w-full overflow-hidden rounded-2xl bg-black cursor-pointer group" style="padding-top: 56.25%;" onclick="playVideo(this, 'nvUqnpicSd0')">
@@ -671,9 +691,10 @@
             }
         }
 
-        // Nivel 4: Dilema final
+        // Nivel 4: Dilema Ambiental
         function startLevel4() {
-            showOwlClue("Hoo-hoo... Has llegado al corazón del bosque. Demuestra tu sabiduría sobre cómo cuidar nuestro entorno natural.", 'screen-level-4');
+            showOwlClue("Hoo-hoo... Demuestra tu sabiduría ambiental antes de cruzar el último sendero hacia el Gran Árbol.", 'screen-level-4');
+            document.getElementById('decision-msg').innerText = "";
             const container = document.getElementById('decision-container');
             container.innerHTML = '';
             let choices = [];
@@ -709,10 +730,149 @@
 
         function checkDecision(type) {
             if(type === 'good') {
+                playBirdSound();
                 document.getElementById('decision-msg').innerText = "¡Excelente decisión ambiental! 💚";
-                setTimeout(()=>showScreen('screen-win'), 1500);
-            } else { document.getElementById('decision-msg').innerText = "Eso dañaría el equilibrio del bosque..."; }
+                setTimeout(() => startLevel5(), 1500);
+            } else { 
+                playErrorSound();
+                document.getElementById('decision-msg').innerText = "Eso dañaría el equilibrio del bosque..."; 
+            }
         }
+
+        // Nivel 5: El Laberinto del Bosque (Adaptativo por edad)
+        // 0 = camino libre, 1 = arbusto/muro, 2 = meta (Gran Árbol)
+        const mazesByDifficulty = {
+            // 4 a 5 años: 5x5 sencillo y visual
+            easy: [
+                [0, 0, 1, 1, 1],
+                [1, 0, 0, 0, 1],
+                [1, 1, 1, 0, 1],
+                [1, 0, 0, 0, 1],
+                [1, 0, 1, 1, 2] // Nota: conectado abajo
+            ],
+            // 6 años: 7x7 con bifurcaciones suaves
+            medium: [
+                [0, 0, 1, 0, 0, 0, 1],
+                [1, 0, 1, 0, 1, 0, 1],
+                [1, 0, 0, 0, 1, 0, 0],
+                [1, 1, 1, 1, 1, 1, 0],
+                [0, 0, 0, 0, 0, 0, 0],
+                [0, 1, 1, 1, 1, 1, 1],
+                [0, 0, 0, 0, 0, 0, 2]
+            ],
+            // 7 a 8 años: 9x9 retador
+            hard: [
+                [0, 0, 1, 0, 0, 0, 1, 0, 0],
+                [1, 0, 1, 0, 1, 0, 1, 0, 1],
+                [1, 0, 0, 0, 1, 0, 0, 0, 1],
+                [1, 1, 1, 1, 1, 1, 1, 0, 1],
+                [0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 1, 1, 1, 1, 0, 1, 1, 0],
+                [0, 1, 0, 0, 0, 0, 0, 0, 0],
+                [0, 1, 0, 1, 1, 1, 1, 1, 1],
+                [0, 0, 0, 1, 0, 0, 0, 0, 2]
+            ]
+        };
+
+        // Ajuste garantizado de camino en nivel fácil
+        mazesByDifficulty.easy = [
+            [0, 0, 1, 1, 1],
+            [1, 0, 0, 0, 1],
+            [1, 1, 1, 0, 1],
+            [1, 0, 0, 0, 0],
+            [1, 0, 1, 1, 2]
+        ];
+
+        let currentMaze = [];
+        let playerPos = { r: 0, c: 0 };
+        let mazeCompleted = false;
+
+        function startLevel5() {
+            showOwlClue("Hoo-hoo... Solo falta llevar la gota de agua pura al corazón del Gran Árbol. Cruza el laberinto del bosque sin perderte entre las zarzas.", 'screen-level-5');
+            currentMaze = mazesByDifficulty[currentDifficulty];
+            playerPos = { r: 0, c: 0 };
+            mazeCompleted = false;
+            document.getElementById('maze-msg').innerText = "";
+            renderMaze();
+        }
+
+        function renderMaze() {
+            const board = document.getElementById('maze-board');
+            const size = currentMaze.length;
+            board.innerHTML = '';
+            board.style.gridTemplateColumns = `repeat(${size}, minmax(0, 1fr))`;
+
+            // Tamaño de celda adaptativo según edad/tamaño de matriz
+            let cellSizeClass = size === 5 
+                ? 'w-12 h-12 sm:w-14 sm:h-14 text-2xl sm:text-3xl' 
+                : size === 7 
+                    ? 'w-9 h-9 sm:w-11 sm:h-11 text-xl sm:text-2xl' 
+                    : 'w-7 h-7 sm:w-9 sm:h-9 text-base sm:text-xl';
+
+            for (let r = 0; r < size; r++) {
+                for (let c = 0; c < size; c++) {
+                    const cell = document.createElement('div');
+                    cell.className = `${cellSizeClass} rounded-lg flex items-center justify-center font-bold transition-all duration-150`;
+
+                    if (playerPos.r === r && playerPos.c === c) {
+                        cell.classList.add('bg-amber-200', 'ring-2', 'ring-yellow-400', 'scale-105');
+                        cell.innerText = '🦝';
+                    } else if (currentMaze[r][c] === 1) {
+                        cell.classList.add('bg-emerald-800');
+                        cell.innerText = '🌿';
+                    } else if (currentMaze[r][c] === 2) {
+                        cell.classList.add('bg-green-200', 'animate-pulse');
+                        cell.innerText = '🌳';
+                    } else {
+                        cell.classList.add('bg-amber-50');
+                    }
+                    board.appendChild(cell);
+                }
+            }
+        }
+
+        function movePlayer(dr, dc) {
+            if (mazeCompleted) return;
+            const activeScreen = document.querySelector('#tab-game .screen.active-screen');
+            if (!activeScreen || activeScreen.id !== 'screen-level-5') return;
+
+            const newR = playerPos.r + dr;
+            const newC = playerPos.c + dc;
+            const size = currentMaze.length;
+
+            if (newR >= 0 && newR < size && newC >= 0 && newC < size && currentMaze[newR][newC] !== 1) {
+                playerPos = { r: newR, c: newC };
+                playRustleSound();
+                renderMaze();
+
+                if (currentMaze[newR][newC] === 2) {
+                    mazeCompleted = true;
+                    playBirdSound();
+                    document.getElementById('maze-msg').innerText = "¡Llegaste al Gran Árbol! El bosque ha sanado. ✨";
+                    setTimeout(() => showScreen('screen-win'), 1500);
+                }
+            } else {
+                playErrorSound();
+                document.getElementById('maze-msg').innerText = "¡Hay arbustos por ahí! Busca otro camino.";
+                setTimeout(() => {
+                    if (!mazeCompleted) document.getElementById('maze-msg').innerText = "";
+                }, 1000);
+            }
+        }
+
+        // Soporte para teclas de flecha en el laberinto
+        document.addEventListener('keydown', (e) => {
+            const activeScreen = document.querySelector('#tab-game .screen.active-screen');
+            if (activeScreen && activeScreen.id === 'screen-level-5') {
+                if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+                    e.preventDefault();
+                    if (e.key === 'ArrowUp') movePlayer(-1, 0);
+                    if (e.key === 'ArrowDown') movePlayer(1, 0);
+                    if (e.key === 'ArrowLeft') movePlayer(0, -1);
+                    if (e.key === 'ArrowRight') movePlayer(0, 1);
+                }
+            }
+        });
 
         function resetGame() { showScreen('screen-intro'); }
 
